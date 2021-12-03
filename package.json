@@ -1,5 +1,5 @@
 {
-	"name": "@fishel/remix-koa",
+	"name": "remix-koa",
 	"version": "0.0.1",
 	"description": "Koa server request handler for Remix",
 	"main": "dist/index.js",
@@ -9,6 +9,10 @@
 	},
 	"files": [
 		"dist"
+	],
+	"keywords": [
+		"remix",
+		"koa"
 	],
 	"author": "Fishel <fengxuneau@foxmail.com> (https://github.com/fx109138)",
 	"devDependencies": {
