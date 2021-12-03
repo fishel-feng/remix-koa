@@ -30,9 +30,6 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@fishel/remix-koa@../":
-  version "0.0.1"
-
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"

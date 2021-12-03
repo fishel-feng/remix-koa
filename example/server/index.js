@@ -3,7 +3,7 @@ const Koa = require("koa");
 const compress = require("koa-compress");
 const morgan = require("koa-morgan");
 const static = require('koa-static');
-const { createRequestHandler } = require('@fishel/remix-koa');
+const { createRequestHandler } = require('remix-koa');
 
 const MODE = process.env.NODE_ENV;
 const BUILD_DIR = path.join(process.cwd(), "server/build");
