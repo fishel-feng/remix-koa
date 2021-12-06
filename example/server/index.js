@@ -12,15 +12,9 @@ let app = new Koa();
 app.use(compress());
 
 // You may want to be more aggressive with this caching
-app.use(static("public", { maxage: 3600000 }));
-
-// Remix fingerprints its assets so we can cache forever
-app.use(static("public/build", {
-  setHeaders: (res) => {
-    res.set('Cache-Control', true);
-  },
-  maxage: 31557600000
-}));
+app.use(
+  static("public", { maxAge: 3600000, setHeaders: setCustomCacheControl })
+);
 
 app.use(morgan("tiny"));
 app.use(
@@ -49,5 +43,13 @@ function purgeRequireCache() {
     if (key.startsWith(BUILD_DIR)) {
       delete require.cache[key];
     }
+  }
+}
+
+const remixBuildPath = path.join(process.cwd(), "public", "build");
+function setCustomCacheControl(res, filePath) {
+  // Remix fingerprints its assets so we can cache forever
+  if (filePath.startsWith(remixBuildPath)) {
+    res.set("Cache-Control", `max-age=${60 * 60 * 24 * 365},immutable`);
   }
 }

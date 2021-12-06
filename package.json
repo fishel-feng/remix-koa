@@ -1,6 +1,6 @@
 {
 	"name": "remix-koa",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "Koa server request handler for Remix",
 	"main": "dist/index.js",
 	"scripts": {
